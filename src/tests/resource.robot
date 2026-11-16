@@ -9,7 +9,7 @@ ${BROWSER}   chromium
 ${HEADLESS}  false
 
 *** Keywords ***
-Open And Configure Browser
+Open And Configure Browser Reset Counter
     IF  $HEADLESS == 'true'
         New Browser  browser=${BROWSER}  headless=True
     ELSE
@@ -17,3 +17,6 @@ Open And Configure Browser
     END
     New Context
     New Page  about:blank
+
+    Go To  ${HOME_URL}
+    Click  button >> text=Nollaa
